@@ -2,12 +2,13 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>HOME</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
+	<h1> DICE GAME! </h1> <hr>
+
 	<p><a href="/dicegame/play">PLAY</a></p>
+	<p><a href="/dicegame/configure">CONFIGURE</a></p>
+	
 </body>
 </html>
