@@ -7,6 +7,6 @@
 	<title>CONFIGURE</title>
 </head>
 <body>
-	<h1>DICE GAME!</h1>
+	<h1> DICE GAME! </h1> <hr>
 </body>
 </html>

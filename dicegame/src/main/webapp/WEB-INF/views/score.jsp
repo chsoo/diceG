@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>score</title>
 </head>
 <body>
+	<h1> DICE GAME! </h1> <hr>
 	<p><a href="/dicegame">EXIT</a></p>
 </body>
 </html>
