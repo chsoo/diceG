@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ResultController {
 
 	@RequestMapping("/result")
-	public String showConfigure() {
+	public String showResult() {
 		
 		
 		return "result";

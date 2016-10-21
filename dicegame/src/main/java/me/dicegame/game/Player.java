@@ -6,6 +6,7 @@ public class Player {
 	private String name;
 	private int roll_num;
 	
+	
 	public String getName() {
 		return name;
 	}

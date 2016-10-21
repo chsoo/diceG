@@ -16,12 +16,14 @@ public class PlayController {
 	ArrayList<Integer> alphago = new ArrayList<Integer>();
 	Dice dice1 = new Dice(); 
 	Dice dice2 = new Dice(); 
+	public int sum_human=0;
+	public int sum_alphago=0;
 	
 	@RequestMapping("/play")
-	public String showConfigure
+	public String showPlay
 		(@RequestParam(value="roll", required=false) String roll, Model model) {
 		
-		//play.jsp에서 roll버튼 누를때마다 저장됨.
+		//play.jsp에서 roll버튼 누를때마다 저장됨. 왜냐면 함수가 게속 도니까
 		human.add(dice1.roll());
 		alphago.add(dice2.roll());
 		
@@ -30,14 +32,37 @@ public class PlayController {
 		model.addAttribute("human", human);
 		
 		//찍어보기
-		System.out.println(dice1.roll());
-		System.out.println(dice2.roll());
-		for (int i : human) {
-			System.out.println(human);
+		System.out.println("human-"+dice1.roll());
+		System.out.println("alphago-"+dice2.roll());
+		/*for (int i : human) {
+			System.out.println("human:"+human);
+			System.out.println("alphago:"+alphago);
+			//arraylist의 모든 변수들의 합을 구하고, 29 넘으면 딴대로 리턴 시켜야지
+			if (human.get(i) != null) {
+				sum_human += human.get(sum_human);
+				sum_alphago += alphago.get(sum_alphago);
+			}
+			System.out.println("sum_human:"+sum_human);
+			System.out.println("sum_alphago:"+sum_alphago);
+		}*/
+		Sum_alphago();
+		Sum_human();
+		System.out.println("sum_human"+sum_human);
+		//if (sum>29) return score, else return play
+		if (sum_alphago > 29) return "score";
+		else return "play";
+	}
+	public int Sum_human () {
+		for(int i=0 ; i<human.size() ; i++) {
+			sum_human += human.get(i);
 		}
-		
-		
-		return "play";
+		return sum_human;
+	}
+	public int Sum_alphago() {
+		for(int i=0 ; i<human.size() ; i++) {
+			sum_alphago += alphago.get(i);
+		}
+		return sum_alphago;
 	}
 	
 }

@@ -9,15 +9,11 @@ import me.dicegame.game.Entry;
 
 @Controller
 public class ScoreController {
-	private ArrayList<Entry> scores;
-	
-	
-	
-	
 	
 	@RequestMapping("/score")
-	public String showConfigure() {
+	public String showScore() {
 		
+	
 		
 		return "score";
 	}
