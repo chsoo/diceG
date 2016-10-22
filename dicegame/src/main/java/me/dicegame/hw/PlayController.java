@@ -28,41 +28,20 @@ public class PlayController {
 		alphago.add(dice2.roll());
 		
 		//jsp로 값 보내주기
-		model.addAttribute("alphago", alphago);
 		model.addAttribute("human", human);
-		
+		model.addAttribute("alphago", alphago);
+		//array 마지막 값을 계속 더해줌
+		sum_human += human.get(human.size()-1);
+		sum_alphago += alphago.get(alphago.size()-1);
 		//찍어보기
-		System.out.println("human-"+dice1.roll());
-		System.out.println("alphago-"+dice2.roll());
-		/*for (int i : human) {
-			System.out.println("human:"+human);
-			System.out.println("alphago:"+alphago);
-			//arraylist의 모든 변수들의 합을 구하고, 29 넘으면 딴대로 리턴 시켜야지
-			if (human.get(i) != null) {
-				sum_human += human.get(sum_human);
-				sum_alphago += alphago.get(sum_alphago);
-			}
-			System.out.println("sum_human:"+sum_human);
-			System.out.println("sum_alphago:"+sum_alphago);
-		}*/
-		Sum_alphago();
-		Sum_human();
 		System.out.println("sum_human"+sum_human);
+		System.out.println("sum_alphago"+sum_alphago);
+		
 		//if (sum>29) return score, else return play
-		if (sum_alphago > 29) return "score";
+		if (sum_alphago > 29 || sum_human > 29 ) return "score";
 		else return "play";
-	}
-	public int Sum_human () {
-		for(int i=0 ; i<human.size() ; i++) {
-			sum_human += human.get(i);
-		}
-		return sum_human;
-	}
-	public int Sum_alphago() {
-		for(int i=0 ; i<human.size() ; i++) {
-			sum_alphago += alphago.get(i);
-		}
-		return sum_alphago;
+
 	}
 	
+
 }
